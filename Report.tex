@@ -1,0 +1,94 @@
+\documentclass{article}
+\usepackage{graphicx}
+\begin{document}
+\title{Speech Command Recognition}
+\date{\today}
+\maketitle
+\begin{itemize}
+
+
+\item{\textbf{OVERVIEW:}}\\
+
+Speech recognition is the process of converting\vspace{3} human sound signals into words \vspace{3} or instructions. It is based on speech. It is an important research direction of speech signal processing\vspace{3} and a branch of pattern recognition.\vspace{3}Speech recognition applications include voice user interfaces such as voice dialing (e.g. ”call home”), call routing (e.g. ”I would like to make\vspace{3} a collect call”), domestic appliance control, search key words\vspace{3} (e.g. find a podcast where particular words were spoken), simple data entry\vspace{3} (e.g., entering a credit card number).\vspace{3} In similar way Speech voice recognition model is based on concepts of \vspace{3}Convolution, LSTM , Attention and recognise pretrained voice with accuracy of \textbf{99.6\%}..\\
+
+\item{\textbf{DATA:}}\\
+
+1: Set 16KHz as sampling rate.\\
+
+2: Record 80 utterances of each command.\\
+
+3: Save samples of each command in different folders.\\
+
+
+\item[*]{Data/forward}.
+
+\item[*]{Data/back}.
+
+\item[*]{Data/left}.
+
+\item[*]{Data/right}.
+
+\item[*]{Data/stop}.\\
+\newpage
+
+\item{\textbf{Description:}}\\
+
+1: Using Audacity software we have generated the data set i.e voice commands Forward, Back, Left, Right, Stop with 80 utterances for each.\\
+
+2: We have splitted the data into two categories i.e Train and Test. where 20\% of the data set are used for testing and the rest for training.The shape of the data set which is used for testing will be \textbf{(1775, 49, 39, 1)} and for training set, shape will be \textbf{(7033, 49, 39, 1)}\\
+
+3: We have also used Melspectogram for extracting features from the data set and also normalization is used so that the model will achieve the converge point point within few epochs.\\
+
+4: LSTM neural network is also used so that our weights will get updated without showing any \textbf{vanishing gradient problem} during training of models. \\
+
+5: Attention is used to get the required data even from a complex sentence, Also batch normalization is used in order to prevent unexpected behaviour of the weights.\\
+
+6: Finally an audio is recorded from user and the model will predict this data based on the already given training and the desired result will be displayed on screen.\\
+
+
+\item{\textbf{The model is successfully built and has achieved the highest accuracy of 99.6\%}}\\
+
+\newpage
+
+\item{\textbf{Model Summary}}\\
+
+\begin{figure}[h]
+\includegraphics[scale=0.5]{qwer.png}
+\end{figure}
+
+\\
+
+\item{\textbf{RUN:}}\\
+
+The Code is written using Google Colab:\\
+
+\item[1.]{Open ColabNotebook.ipynb and change Runtime to GPU.}
+
+\item[2.]{Upload Speech-Recognition/Speech to Colab.}
+
+
+\item[3.]{Change data-dir in all cells to point to Speech-Recognition/speech.}
+
+\item[4.]{Run the cells in the same order in Notebook Test.}
+\\
+
+\item{\textbf{TEST:}}\\
+
+
+1: Locate the folder where you save your model.h5 file.\\
+
+2: Start speaking when you see mike in the bottom right pane of the task bar or see red blinking dot in the title bar.\\
+
+\\
+
+
+\item{\textbf{Language Used:}}\\
+
+PYTHON\\
+
+\item{\textbf{Libraries and Packages Used:}}\\
+
+KAPRE, SCIKIT LEARN, SOUND FILE, TENSORFLOW.\\
+
+\end{itemize}
+\end{document}
